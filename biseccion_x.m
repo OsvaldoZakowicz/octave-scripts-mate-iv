@@ -25,7 +25,8 @@ function [] = biseccion_x (funcion,a,b,minimo_error,max_iteraciones)
     #p inicial, valor medio del intervalo
     p = (a+b)/2;
     #error relativo
-    error_relativo = abs((p-p_anterior)/p)*100;
+    # ver tipo de dato!!!
+    error_relativo = abs((p-p_anterior)/p);
     #comprobar signo entre p y un extremo
     test_signo = funcion(a)*funcion(p);
     if(test_signo<0)
@@ -35,6 +36,7 @@ function [] = biseccion_x (funcion,a,b,minimo_error,max_iteraciones)
       disp(b)
       disp('# iteracion: ')
       disp(iteraciones)
+      fprintf('%9.9f \n', error_relativo)
     elseif(test_signo>0)
       #a y p tienen el mismo signo
       a = p;
@@ -42,6 +44,7 @@ function [] = biseccion_x (funcion,a,b,minimo_error,max_iteraciones)
       disp(a)
       disp('# iteracion: ')
       disp(iteraciones)
+      fprintf('%9.9f \n', error_relativo)
     else
       disp('cero')
     end
@@ -53,6 +56,7 @@ function [] = biseccion_x (funcion,a,b,minimo_error,max_iteraciones)
       disp('*****RESULTADO POR BISECCION*********')
       disp('RAIZ APROXIMADA: ')
       disp(p)
+      fprintf('%9.9f \n', error_relativo)
       disp('***************FIN*******************')
       break;
     end
