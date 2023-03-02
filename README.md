@@ -1,4 +1,4 @@
-# OctaveScriptsMateIV
+# Octave Scripts Matemáticas IV
 Scripts de cada metodo de resolucion usado en matematica IV
 
 ## Script: método de biseccion:
